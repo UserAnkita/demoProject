@@ -1,0 +1,37 @@
+//created on: Aug 8, 2017
+package jbpm.model
+
+//list any import classes here.
+
+
+
+//declare any global variables here
+
+
+rule "Age Validation"
+  dialect "mvel"
+  ruleflow-group "validation"
+  no-loop true
+  when
+  bnkcust : BankCustomer( age > 0 , age <= 60 )
+  then
+  bnkcust.setIsActiveProcess( true );
+end
+
+rule "Your First Rule"
+
+    when
+        //conditions
+    then
+        //actions
+
+end
+
+rule "Your Second Rule"
+    //include attributes such as "salience" here...
+    when
+        //conditions
+    then
+        //actions
+
+end
